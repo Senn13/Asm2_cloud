@@ -14,16 +14,22 @@
             
             <!-- (1): CREATE Task -->         
             <!-- --> 
-            <form action="/quotes" method="POST">
-                <div class="mb-3 mt-3">
+            <form action="/products" method="POST">
+                <div class="mb-3 mt-3 form-outline">
                     <label for="name">Name</label>
                     <input type="text" class="form-control" placeholder="Name" name="name" />
                 </div>  
 
-                <div class="mb-3">
-                    <label for="Phone">Price</label>
-                    <input type="text" class="form-control" placeholder="Price" name="quote" />
+                <div class="mb-3 form-outline">
+                  <label for="quantity">Number input</label>
+                  <input type="number"class="form-control" placeholder="Quantity" name="quantity" />
                 </div>
+
+                <div class="mb-3 form-outline">
+                    <label for="price">Price</label>
+                    <input type="text" class="form-control" placeholder="Price" name="price" />
+                </div>
+
                     <button type="submit" class="btn btn-success">Submit</button>
             </form>
             <!-- -->                               
@@ -32,17 +38,19 @@
                   <tr>
                     <th scope="col">#</th>
                     <th scope="col">Name</th>
+                    <th scope="col">Quantity</th>
                     <th scope="col">Price</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <% for(var i = 0; i < quotes.length; i++) {%>
+                    <% for(var i = 0; i < products.length; i++) {%>
                         
                         <tr>
                             <th scope="row"><%=i+1%></th>
-                            <td><span><%= quotes[i].name %></span></td>
-                            <td><span><%= quotes[i].quote %></span></td>
+                            <td><span><%= products[i].name %></span></td>
+                            <td><span><%= products[i].quantity %></span></td>
+                            <td><span><%= products[i].price %></span></td>
                         </tr>
                     <% } %>
                   </tr>
